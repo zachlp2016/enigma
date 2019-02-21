@@ -1,5 +1,7 @@
+require './lib/modules/keys'
+
 class Enigma
 
-  include KeyModule
+  include Keys
 
 end
