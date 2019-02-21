@@ -1,4 +1,4 @@
-module Keys
+class Keys
 
   def random_number
     arr = []
@@ -23,11 +23,4 @@ module Keys
   def d_key
     random_number.to_s[2..3].to_i
   end
-  # The keys are created by generating a random five digit number, like 02715, and splitting it up like so:
-  #
-  # A key: first two digits (02)
-  # B key: second and third digits (27)
-  # C key: third and fourth digits (71)
-  # D key: fourth and fifth digits (15)
-
 end
