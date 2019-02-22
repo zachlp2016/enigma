@@ -24,4 +24,8 @@ module Offsets
   def two_digit_year
     todays_date.year.to_s[-2..-1]
   end
+
+  def a_offset
+    master_offset[0].to_i
+  end
 end

@@ -54,10 +54,9 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_create_offsets
-    skip
-    assert_equal 2, @enigma.a_offset.to_s.chars.count
-    assert_equal 2, @enigma.b_offset.to_s.chars.count
-    assert_equal 2, @enigma.c_offset.to_s.chars.count
-    assert_equal 2, @enigma.d_offset.to_s.chars.count
+    assert_equal 1, @enigma.a_offset.to_s.chars.count
+    assert_equal 1, @enigma.b_offset.to_s.chars.count
+    assert_equal 1, @enigma.c_offset.to_s.chars.count
+    assert_equal 1, @enigma.d_offset.to_s.chars.count
   end
 end
