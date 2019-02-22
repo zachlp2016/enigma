@@ -24,8 +24,16 @@ class Enigma
     @characters = ("a".."z").to_a << " "
   end
 
+  def split_string
+
+  end
+
   def encrypt(message, key = @random_number, date = six_digit_date)
     create_shifts(key, date)
+    shifted_letters = split_string(message).map.with_index do |letter, index|
+
+    end
+  binding.pry
   end
 
 end

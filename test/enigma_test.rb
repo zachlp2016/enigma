@@ -99,7 +99,12 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, @enigma.d_shift
   end
 
+  def test_method_split_string_can_divide_message
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], @enigma.split_string(message)
+  end
+
   def test_encrypt_method_can_encrypt
+    skip
     hash = {
     encryption: "keder ohulw",
     key: "02715",
