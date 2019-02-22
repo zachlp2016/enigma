@@ -126,12 +126,23 @@ class EnigmaTest < Minitest::Test
 
   def test_decrypt_method_can_decrypt
     hash = {
-    encryption: "keder ohulw",
+    decryption: "hello world",
     key: "02715",
     date: "040895"
   }
 
-    assert_equal hash, @enigma.encrypt("keder ohulw", "02715", "040895")
+    assert_equal hash, @enigma.decrypt("keder ohulw", "02715", "040895")
+  end
+
+  def test_shift_helpers_work
+    @enigma.a_shifter("02715", "040895")
+    @enigma.b_shifter("02715", "040895")
+    @enigma.c_shifter("02715", "040895")
+    @enigma.d_shifter("02715", "040895")
+    assert_equal "h", @enigma.neg_shift_0("k")
+    assert_equal "e", @enigma.neg_shift_1("e")
+    assert_equal "l", @enigma.neg_shift_2("d")
+    assert_equal "l", @enigma.neg_shift_3("e")
   end
 
 end
