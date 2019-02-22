@@ -72,8 +72,16 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, @enigma.d_shift
   end
 
-  def test_enigma_create_shifts_works
+  def test_enigma_create_shifts_method_creates_shifts
     @enigma.create_shifts("02715", "040895")
+    assert_equal 3, @enigma.a_shift
+    assert_equal 27, @enigma.b_shift
+    assert_equal 73, @enigma.c_shift
+    assert_equal 20, @enigma.d_shift
+  end
+
+  def test_encrypt_method_can_create_shifts
+    @enigma.encrypt("Hello World", "02715", "040895")
     assert_equal 3, @enigma.a_shift
     assert_equal 27, @enigma.b_shift
     assert_equal 73, @enigma.c_shift
