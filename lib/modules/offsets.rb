@@ -17,4 +17,7 @@ module Offsets
     todays_date.month.to_s.rjust(2, '0')
   end
 
+  def two_digit_year
+    todays_date.year.to_s[-2..-1]
+  end
 end

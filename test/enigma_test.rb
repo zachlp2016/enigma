@@ -41,6 +41,10 @@ class EnigmaTest < Minitest::Test
     assert_equal 2, @enigma.two_digit_month.chars.count
   end
 
+  def test_enigma_can_create_two_digit_year
+    assert_equal 2, @enigma.two_digit_year.chars.count
+  end
+
   def test_enigma_can_create_todays_date_from_date_generator
     skip
     assert_equal "210219", @enigma.master_offset
