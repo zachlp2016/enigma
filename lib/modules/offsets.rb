@@ -13,4 +13,8 @@ module Offsets
     todays_date.day.to_s.rjust(2, '0')
   end
 
+  def two_digit_month
+    todays_date.month.to_s.rjust(2, '0')
+  end
+
 end
