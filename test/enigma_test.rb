@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'date'
 require 'pry'
 require './lib/enigma'
 
@@ -15,12 +16,10 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_generate_random_number
-    @enigma.random_number_generator
     assert_equal 5, @enigma.random_number.to_s.chars.count
   end
 
   def test_enigma_can_create_an_a_key
-    @enigma.random_number_generator
     assert_equal 2, @enigma.a_key.to_s.chars.count
     assert_equal 2, @enigma.b_key.to_s.chars.count
     assert_equal 2, @enigma.c_key.to_s.chars.count
@@ -73,6 +72,22 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, @enigma.d_shift
   end
 
+  def test_enigma_create_shifts_method_creates_shifts
+    @enigma.create_shifts("02715", "040895")
+    assert_equal 3, @enigma.a_shift
+    assert_equal 27, @enigma.b_shift
+    assert_equal 73, @enigma.c_shift
+    assert_equal 20, @enigma.d_shift
+  end
+
+  def test_encrypt_method_can_create_shifts
+    @enigma.encrypt("Hello World", "02715", "040895")
+    assert_equal 3, @enigma.a_shift
+    assert_equal 27, @enigma.b_shift
+    assert_equal 73, @enigma.c_shift
+    assert_equal 20, @enigma.d_shift
+  end
+
   # def test_enigma_can_create_shifts_without_included_key_and_date
   #   @enigma.random_number_generator
   #   @enigma.a_shifter
@@ -84,4 +99,6 @@ class EnigmaTest < Minitest::Test
   #   @enigma.d_shifter
   #   assert_instance_of Integer, @enigma.d_shift
   # end
+
+
 end

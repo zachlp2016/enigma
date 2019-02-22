@@ -16,11 +16,16 @@ class Enigma
               :d_shift
 
   def initialize
-    @random_number = random_number
+    @random_number = random_number_generator
     @a_shift = 0
     @b_shift = 0
     @c_shift = 0
     @d_shift = 0
+    @characters = ("a".."z").to_a << " "
+  end
+
+  def encrypt(message, key = @random_number, date = six_digit_date)
+    create_shifts(key, date)
   end
 
 end
