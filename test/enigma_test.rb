@@ -71,6 +71,17 @@ class EnigmaTest < Minitest::Test
     @enigma.d_shifter("02715", "040895")
     assert_equal 20, @enigma.d_shift
   end
+  # def test_enigma_can_create_shifts_without_included_key_and_date
+  #   @enigma.random_number_generator
+  #   @enigma.a_shifter
+  #   assert_equal 2, @enigma.a_shift
+  #   @enigma.b_shifter
+  #   assert_instance_of Integer, @enigma.b_shift
+  #   @enigma.c_shifter
+  #   assert_instance_of Integer, @enigma.c_shift
+  #   @enigma.d_shifter
+  #   assert_instance_of Integer, @enigma.d_shift
+  # end
 
   def test_enigma_create_shifts_method_creates_shifts
     @enigma.create_shifts("02715", "040895")
@@ -88,17 +99,14 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, @enigma.d_shift
   end
 
-  # def test_enigma_can_create_shifts_without_included_key_and_date
-  #   @enigma.random_number_generator
-  #   @enigma.a_shifter
-  #   assert_equal 2, @enigma.a_shift
-  #   @enigma.b_shifter
-  #   assert_instance_of Integer, @enigma.b_shift
-  #   @enigma.c_shifter
-  #   assert_instance_of Integer, @enigma.c_shift
-  #   @enigma.d_shifter
-  #   assert_instance_of Integer, @enigma.d_shift
-  # end
+  def test_encrypt_method_can_encrypt
+    hash = {
+    encryption: "keder ohulw",
+    key: "02715",
+    date: "040895"
+  }
 
+    assert_equal hash, @enigma.encrypt("Hello World", "02715", "040895")
+  end
 
 end
