@@ -13,6 +13,4 @@ class Enigma
     @random_number = random_number
   end
 
-  def encrypt(message, key, date)
-
 end
