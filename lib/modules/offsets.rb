@@ -28,4 +28,8 @@ module Offsets
   def a_offset
     master_offset[0].to_i
   end
+
+  def b_offset
+    master_offset[1].to_i
+  end
 end
