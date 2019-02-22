@@ -11,4 +11,8 @@ module Shifts
   def c_shifter(key = @random_number, date = six_digit_date)
     @c_shift = c_key(key).to_i + c_offset(date)
   end
+
+  def d_shifter(key = @random_number, date = six_digit_date)
+    @d_shift = d_key(key).to_i + d_offset(date)
+  end
 end
