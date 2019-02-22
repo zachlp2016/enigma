@@ -15,10 +15,12 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_generate_random_number
+    @enigma.random_number_generator
     assert_equal 5, @enigma.random_number.to_s.chars.count
   end
 
   def test_enigma_can_create_an_a_key
+    @enigma.random_number_generator
     assert_equal 2, @enigma.a_key.to_s.chars.count
     assert_equal 2, @enigma.b_key.to_s.chars.count
     assert_equal 2, @enigma.c_key.to_s.chars.count
@@ -59,4 +61,13 @@ class EnigmaTest < Minitest::Test
     assert_equal 1, @enigma.c_offset.to_s.chars.count
     assert_equal 1, @enigma.d_offset.to_s.chars.count
   end
+
+  def test_enigma_can_create_shifts
+    assert_equal 3, @enigma.a_shift("02715", "040895")
+    # assert_equal 27, @enigma.b_shift("02715", "040895")
+    # assert_equal 73, @enigma.c_shift("02715", "040895")
+    # assert_equal 20, @enigma.d_shift("02715", "040895")
+  end
+
+
 end
