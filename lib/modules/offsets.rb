@@ -36,4 +36,8 @@ module Offsets
   def c_offset
     master_offset[2].to_i
   end
+
+  def d_offset
+    master_offset[2].to_i
+  end
 end
