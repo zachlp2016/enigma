@@ -25,11 +25,16 @@ class EnigmaTest < Minitest::Test
     assert_equal 2, @enigma.d_key.to_s.chars.count
   end
 
-  def test_enigma_can_generate_master_offset
-    assert_equal "1025", @enigma.master_offset("040895").to_s.chars.count
+  def test_enigma_can_generate_master_offset_from_provided_date
+    assert_equal "1025", @enigma.master_offset("040895")
+  end
+
+  def test_enigma_can_create_todays_date_from_date_generator
+    assert_equal "210219", @enigma.master_offset
   end
 
   def test_enigma_can_create_offsets
+    skip
     assert_equal 2, @enigma.a_offset.to_s.chars.count
     assert_equal 2, @enigma.b_offset.to_s.chars.count
     assert_equal 2, @enigma.c_offset.to_s.chars.count
