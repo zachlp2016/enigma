@@ -15,12 +15,10 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_generate_random_number
-    @enigma.random_number_generator
     assert_equal 5, @enigma.random_number.to_s.chars.count
   end
 
   def test_enigma_can_create_an_a_key
-    @enigma.random_number_generator
     assert_equal 2, @enigma.a_key.to_s.chars.count
     assert_equal 2, @enigma.b_key.to_s.chars.count
     assert_equal 2, @enigma.c_key.to_s.chars.count
@@ -84,4 +82,6 @@ class EnigmaTest < Minitest::Test
   #   @enigma.d_shifter
   #   assert_instance_of Integer, @enigma.d_shift
   # end
+
+
 end
