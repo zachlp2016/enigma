@@ -124,4 +124,14 @@ class EnigmaTest < Minitest::Test
     assert_equal "e", @enigma.shift_3("l")
   end
 
+  def test_decrypt_method_can_decrypt
+    hash = {
+    encryption: "keder ohulw",
+    key: "02715",
+    date: "040895"
+  }
+
+    assert_equal hash, @enigma.encrypt("keder ohulw", "02715", "040895")
+  end
+
 end
