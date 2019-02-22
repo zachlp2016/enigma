@@ -38,6 +38,6 @@ module Offsets
   end
 
   def d_offset(date = six_digit_date)
-    master_offset(date)[2].to_i
+    master_offset(date)[3].to_i
   end
 end

@@ -62,14 +62,26 @@ class EnigmaTest < Minitest::Test
     assert_equal 1, @enigma.d_offset.to_s.chars.count
   end
 
-  def test_enigma_can_create_shifts
+  def test_enigma_can_create_shifts_with_included_key_and_date
     @enigma.a_shifter("02715", "040895")
     assert_equal 3, @enigma.a_shift
-    # assert_equal 4, @enigma.poppa("23422", "352352")
-    # assert_equal 27, @enigma.b_shift("02715", "040895")
-    # assert_equal 73, @enigma.c_shift("02715", "040895")
-    # assert_equal 20, @enigma.d_shift("02715", "040895")
+    @enigma.b_shifter("02715", "040895")
+    assert_equal 27, @enigma.b_shift
+    @enigma.c_shifter("02715", "040895")
+    assert_equal 73, @enigma.c_shift
+    @enigma.d_shifter("02715", "040895")
+    assert_equal 20, @enigma.d_shift
   end
 
-
+  # def test_enigma_can_create_shifts_without_included_key_and_date
+  #   @enigma.random_number_generator
+  #   @enigma.a_shifter
+  #   assert_equal 2, @enigma.a_shift
+  #   @enigma.b_shifter
+  #   assert_instance_of Integer, @enigma.b_shift
+  #   @enigma.c_shifter
+  #   assert_instance_of Integer, @enigma.c_shift
+  #   @enigma.d_shifter
+  #   assert_instance_of Integer, @enigma.d_shift
+  # end
 end
