@@ -29,23 +29,24 @@ class Enigma
   end
 
   def encrypt(message, key = @random_number, date = six_digit_date)
+    n = 0
     encrypt_hash = {}
     encrypted_message = ""
     create_shifts(key, date)
-    split_string(message).map.with_index do |letter, index|
-      if index == 0 || index == 4 || index == 8
+    split_string(message).map.with_index(0) do |letter, index|
+      if index == 0 || index % 4 == 0
         shifted_set_0 = @characters.rotate(@a_shift)
         new_char_0 = shifted_set_0[@characters.index(letter)]
         encrypted_message << new_char_0
-      elsif index == 1 || index == 5 || index == 9
+      elsif index == 1 || index % 4 == 1
         shifted_set_1 = @characters.rotate(@b_shift)
         new_char_1 = shifted_set_1[@characters.index(letter)]
         encrypted_message << new_char_1
-      elsif index == 2 || index == 6 || index == 10
+      elsif index == 2 || index % 4 == 2
         shifted_set_2 = @characters.rotate(@c_shift)
         new_char_2 = shifted_set_2[@characters.index(letter)]
         encrypted_message << new_char_2
-      else index == 3 || index == 7 || index == 11
+      elsif index == 3 || index % 4 == 3
         shifted_set_3 = @characters.rotate(@d_shift)
         new_char_3 = shifted_set_3[@characters.index(letter)]
         encrypted_message << new_char_3
