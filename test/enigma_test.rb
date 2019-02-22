@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'date'
 require 'pry'
 require './lib/enigma'
 
@@ -68,6 +69,14 @@ class EnigmaTest < Minitest::Test
     @enigma.c_shifter("02715", "040895")
     assert_equal 73, @enigma.c_shift
     @enigma.d_shifter("02715", "040895")
+    assert_equal 20, @enigma.d_shift
+  end
+
+  def test_enigma_create_shifts_works
+    @enigma.create_shifts("02715", "040895")
+    assert_equal 3, @enigma.a_shift
+    assert_equal 27, @enigma.b_shift
+    assert_equal 73, @enigma.c_shift
     assert_equal 20, @enigma.d_shift
   end
 

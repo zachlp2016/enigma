@@ -24,7 +24,8 @@ class Enigma
     @characters = ("a".."z").to_a << " "
   end
 
-  def encrypt
+  def encrypt(message, key = @random_number, date = six_digit_date)
+    create_shifts(key, date)
   end
 
 end
