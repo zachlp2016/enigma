@@ -104,7 +104,6 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_encrypt_method_can_encrypt
-    skip
     hash = {
     encryption: "keder ohulw",
     key: "02715",
