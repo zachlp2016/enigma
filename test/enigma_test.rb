@@ -152,4 +152,8 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Hash, @enigma.decrypt("keder ohulw", "02715")
   end
 
+  def test_encrypt_method_works_without_a_key_or_a_date
+    assert_instance_of Hash, @enigma.encrypt("hello world")
+  end
+
 end
