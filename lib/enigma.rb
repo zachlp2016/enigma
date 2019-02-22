@@ -35,21 +35,13 @@ class Enigma
     create_shifts(key, date)
     split_string(message).map.with_index(0) do |letter, index|
       if index == 0 || index % 4 == 0
-        shifted_set_0 = @characters.rotate(@a_shift)
-        new_char_0 = shifted_set_0[@characters.index(letter)]
-        encrypted_message << new_char_0
+        encrypted_message << shift_0(letter)
       elsif index == 1 || index % 4 == 1
-        shifted_set_1 = @characters.rotate(@b_shift)
-        new_char_1 = shifted_set_1[@characters.index(letter)]
-        encrypted_message << new_char_1
+        encrypted_message << shift_1(letter)
       elsif index == 2 || index % 4 == 2
-        shifted_set_2 = @characters.rotate(@c_shift)
-        new_char_2 = shifted_set_2[@characters.index(letter)]
-        encrypted_message << new_char_2
+        encrypted_message << shift_2(letter)
       elsif index == 3 || index % 4 == 3
-        shifted_set_3 = @characters.rotate(@d_shift)
-        new_char_3 = shifted_set_3[@characters.index(letter)]
-        encrypted_message << new_char_3
+        encrypted_message << shift_3(letter)
       end
     end
     encrypt_hash = {
@@ -59,4 +51,25 @@ class Enigma
     }
     return encrypt_hash
   end
+
+  def shift_0(letter)
+    shifted_set_0 = @characters.rotate(@a_shift)
+    new_char_0 = shifted_set_0[@characters.index(letter)]
+  end
+
+  def shift_1(letter)
+    shifted_set_1 = @characters.rotate(@b_shift)
+    new_char_1 = shifted_set_1[@characters.index(letter)]
+  end
+
+  def shift_2(letter)
+    shifted_set_2 = @characters.rotate(@c_shift)
+    new_char_2 = shifted_set_2[@characters.index(letter)]
+  end
+
+  def shift_3(letter)
+    shifted_set_3 = @characters.rotate(@d_shift)
+    new_char_3 = shifted_set_3[@characters.index(letter)]
+  end
+
 end

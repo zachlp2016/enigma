@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-02-21T23:58:05-07:00">2019-02-21T23:58:05-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-02-22T00:22:00-07:00">2019-02-22T00:22:00-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.97
+         5.2
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>89</b> relevant lines. 
-    <span class="green"><b>89</b> lines covered</span> and
+    <b>93</b> relevant lines. 
+    <span class="green"><b>93</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#09bf89333a3d4dd3f0a5db6016dc66cc2dc09e2c" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>62</td>
-        <td>42</td>
-        <td>42</td>
+        <td>75</td>
+        <td>46</td>
+        <td>46</td>
         <td>0</td>
-        <td>5.8</td>
+        <td>5.7</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>3.8</td>
+        <td>4.3</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>5.6</td>
+        <td>6.2</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.7</td>
       </tr>
       
     </tbody>
@@ -111,8 +111,8 @@
     <h3>lib/enigma.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
-      <span class="green"><b>42</b> lines covered</span> and
+      <b>46</b> relevant lines. 
+      <span class="green"><b>46</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -228,38 +228,38 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="19">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="19">
+          <span class="hits">17</span>
           
           <code class="ruby">    @random_number = random_number_generator</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="20">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="20">
+          <span class="hits">17</span>
           
           <code class="ruby">    @a_shift = 0</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="21">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="21">
+          <span class="hits">17</span>
           
           <code class="ruby">    @b_shift = 0</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="22">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="22">
+          <span class="hits">17</span>
           
           <code class="ruby">    @c_shift = 0</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="23">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="23">
+          <span class="hits">17</span>
           
           <code class="ruby">    @d_shift = 0</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="24">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="24">
+          <span class="hits">17</span>
           
           <code class="ruby">    @characters = (&quot;a&quot;..&quot;z&quot;).to_a &lt;&lt; &quot; &quot;</code>
         </li>
@@ -345,148 +345,226 @@
         <li class="covered" data-hits="6" data-linenumber="38">
           <span class="hits">6</span>
           
-          <code class="ruby">        shifted_set_0 = @characters.rotate(@a_shift)</code>
+          <code class="ruby">        encrypted_message &lt;&lt; shift_0(letter)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="39">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        new_char_0 = shifted_set_0[@characters.index(letter)]</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="40">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        encrypted_message &lt;&lt; new_char_0</code>
-        </li>
-      
-        <li class="covered" data-hits="16" data-linenumber="41">
+        <li class="covered" data-hits="16" data-linenumber="39">
           <span class="hits">16</span>
           
           <code class="ruby">      elsif index == 1 || index % 4 == 1</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="42">
+        <li class="covered" data-hits="6" data-linenumber="40">
           <span class="hits">6</span>
           
-          <code class="ruby">        shifted_set_1 = @characters.rotate(@b_shift)</code>
+          <code class="ruby">        encrypted_message &lt;&lt; shift_1(letter)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="43">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        new_char_1 = shifted_set_1[@characters.index(letter)]</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="44">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        encrypted_message &lt;&lt; new_char_1</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="45">
+        <li class="covered" data-hits="10" data-linenumber="41">
           <span class="hits">10</span>
           
           <code class="ruby">      elsif index == 2 || index % 4 == 2</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="46">
+        <li class="covered" data-hits="6" data-linenumber="42">
           <span class="hits">6</span>
           
-          <code class="ruby">        shifted_set_2 = @characters.rotate(@c_shift)</code>
+          <code class="ruby">        encrypted_message &lt;&lt; shift_2(letter)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="47">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        new_char_2 = shifted_set_2[@characters.index(letter)]</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="48">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        encrypted_message &lt;&lt; new_char_2</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="49">
+        <li class="covered" data-hits="4" data-linenumber="43">
           <span class="hits">4</span>
           
           <code class="ruby">      elsif index == 3 || index % 4 == 3</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="50">
+        <li class="covered" data-hits="4" data-linenumber="44">
           <span class="hits">4</span>
           
-          <code class="ruby">        shifted_set_3 = @characters.rotate(@d_shift)</code>
+          <code class="ruby">        encrypted_message &lt;&lt; shift_3(letter)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="51">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        new_char_3 = shifted_set_3[@characters.index(letter)]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="52">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        encrypted_message &lt;&lt; new_char_3</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="55">
+        <li class="covered" data-hits="2" data-linenumber="47">
           <span class="hits">2</span>
           
           <code class="ruby">    encrypt_hash = {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">      encryption: encrypted_message,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">      key: key,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">      date: date</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">    }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="60">
+        <li class="covered" data-hits="2" data-linenumber="52">
           <span class="hits">2</span>
           
           <code class="ruby">    return encrypt_hash</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def shift_0(letter)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="56">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    shifted_set_0 = @characters.rotate(@a_shift)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="57">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    new_char_0 = shifted_set_0[@characters.index(letter)]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def shift_1(letter)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="61">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    shifted_set_1 = @characters.rotate(@b_shift)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="62">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    new_char_1 = shifted_set_1[@characters.index(letter)]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def shift_2(letter)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="66">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    shifted_set_2 = @characters.rotate(@c_shift)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="67">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    new_char_2 = shifted_set_2[@characters.index(letter)]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def shift_3(letter)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="71">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    shifted_set_3 = @characters.rotate(@d_shift)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="72">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    new_char_3 = shifted_set_3[@characters.index(letter)]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">end</code>
@@ -529,8 +607,8 @@
           <code class="ruby">  def random_number_generator</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="4">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="4">
+          <span class="hits">17</span>
           
           <code class="ruby">    rand(0..99999).to_s.rjust(5, &#39;0&#39;)</code>
         </li>
@@ -553,8 +631,8 @@
           <code class="ruby">  def a_key(key = @random_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="8">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">    key[0..1]</code>
         </li>
@@ -577,8 +655,8 @@
           <code class="ruby">  def b_key(key = @random_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="12">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="12">
+          <span class="hits">6</span>
           
           <code class="ruby">    key[1..2]</code>
         </li>
@@ -601,8 +679,8 @@
           <code class="ruby">  def c_key(key = @random_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="16">
+          <span class="hits">6</span>
           
           <code class="ruby">    key[2..3]</code>
         </li>
@@ -625,8 +703,8 @@
           <code class="ruby">  def d_key(key = @random_number)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="20">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="20">
+          <span class="hits">6</span>
           
           <code class="ruby">    key[3..4]</code>
         </li>
@@ -680,14 +758,14 @@
           <code class="ruby">  def master_offset(date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="4">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="26" data-linenumber="4">
+          <span class="hits">26</span>
           
           <code class="ruby">    master_offset = date.to_i * date.to_i</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="5">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="26" data-linenumber="5">
+          <span class="hits">26</span>
           
           <code class="ruby">    master_offset = master_offset.to_s[-4..-1].split.join</code>
         </li>
@@ -830,8 +908,8 @@
           <code class="ruby">  def a_offset(date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="29">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="29">
+          <span class="hits">6</span>
           
           <code class="ruby">    master_offset(date)[0].to_i</code>
         </li>
@@ -854,8 +932,8 @@
           <code class="ruby">  def b_offset(date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="33">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="33">
+          <span class="hits">6</span>
           
           <code class="ruby">    master_offset(date)[1].to_i</code>
         </li>
@@ -878,8 +956,8 @@
           <code class="ruby">  def c_offset(date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="37">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="37">
+          <span class="hits">6</span>
           
           <code class="ruby">    master_offset(date)[2].to_i</code>
         </li>
@@ -902,8 +980,8 @@
           <code class="ruby">  def d_offset(date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="41">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="41">
+          <span class="hits">6</span>
           
           <code class="ruby">    master_offset(date)[3].to_i</code>
         </li>
@@ -999,8 +1077,8 @@
           <code class="ruby">  def a_shifter(key = @random_number, date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="11">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="11">
+          <span class="hits">5</span>
           
           <code class="ruby">    @a_shift = a_key(key).to_i + a_offset(date)</code>
         </li>
@@ -1023,8 +1101,8 @@
           <code class="ruby">  def b_shifter(key = @random_number, date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="15">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="15">
+          <span class="hits">5</span>
           
           <code class="ruby">    @b_shift = b_key(key).to_i + b_offset(date)</code>
         </li>
@@ -1047,8 +1125,8 @@
           <code class="ruby">  def c_shifter(key = @random_number, date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="19">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="19">
+          <span class="hits">5</span>
           
           <code class="ruby">    @c_shift = c_key(key).to_i + c_offset(date)</code>
         </li>
@@ -1071,8 +1149,8 @@
           <code class="ruby">  def d_shifter(key = @random_number, date = six_digit_date)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="23">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="23">
+          <span class="hits">5</span>
           
           <code class="ruby">    @d_shift = d_key(key).to_i + d_offset(date)</code>
         </li>

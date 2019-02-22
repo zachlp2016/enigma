@@ -113,4 +113,15 @@ class EnigmaTest < Minitest::Test
     assert_equal hash, @enigma.encrypt("Hello World", "02715", "040895")
   end
 
+  def test_shift_helpers_work
+    @enigma.a_shifter("02715", "040895")
+    @enigma.b_shifter("02715", "040895")
+    @enigma.c_shifter("02715", "040895")
+    @enigma.d_shifter("02715", "040895")
+    assert_equal "k", @enigma.shift_0("h")
+    assert_equal "e", @enigma.shift_1("e")
+    assert_equal "d", @enigma.shift_2("l")
+    assert_equal "e", @enigma.shift_3("l")
+  end
+
 end
