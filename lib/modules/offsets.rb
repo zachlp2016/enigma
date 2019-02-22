@@ -25,19 +25,19 @@ module Offsets
     todays_date.year.to_s[-2..-1]
   end
 
-  def a_offset(date)
-    master_offset(date)[0].to_i
+  def a_offset
+    master_offset[0].to_i
   end
 
-  def b_offset(date)
-    master_offset(date)[1].to_i
+  def b_offset
+    master_offset[1].to_i
   end
 
-  def c_offset(date)
-    master_offset(date)[2].to_i
+  def c_offset
+    master_offset[2].to_i
   end
 
-  def d_offset(date)
-    master_offset(date)[2].to_i
+  def d_offset
+    master_offset[2].to_i
   end
 end
