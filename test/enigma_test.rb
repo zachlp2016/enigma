@@ -25,6 +25,10 @@ class EnigmaTest < Minitest::Test
     assert_equal 2, @enigma.d_key.to_s.chars.count
   end
 
+  def test_enigma_can_generate_master_offset
+    assert_equal 4, @enigma.master_offset.to_s.chars.count
+  end
+
   def test_enigma_can_create_offsets
     assert_equal 2, @enigma.a_offset.to_s.chars.count
     assert_equal 2, @enigma.b_offset.to_s.chars.count
