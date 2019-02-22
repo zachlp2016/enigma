@@ -34,8 +34,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_create_two_digit_day
-    skip
-    assert_equal 2, @enigma.two_digit_day
+    assert_equal 2, @enigma.two_digit_day.chars.count
   end
 
   def test_enigma_can_create_todays_date_from_date_generator
