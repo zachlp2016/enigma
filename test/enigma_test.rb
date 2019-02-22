@@ -144,8 +144,12 @@ class EnigmaTest < Minitest::Test
     assert_equal "l", @enigma.neg_shift_3("e")
   end
 
-  def test_encrypt_method_works_with_todays_date
+  def test_encrypt_method_works_with_a_key_for_todays_date
     assert_instance_of Hash, @enigma.encrypt("Hello World", "02715")
+  end
+
+  def test_decrypt_method_works_with_a_key_for_todays_date
+    assert_instance_of Hash, @enigma.decrypt("keder ohulw", "02715")
   end
 
 end
