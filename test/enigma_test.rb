@@ -29,7 +29,12 @@ class EnigmaTest < Minitest::Test
     assert_equal "1025", @enigma.master_offset("040895")
   end
 
+  def test_enigma_can_create_two_digit_day
+    assert_equal 2, @enigma.two_digit_day
+  end
+
   def test_enigma_can_create_todays_date_from_date_generator
+    skip
     assert_equal "210219", @enigma.master_offset
   end
 

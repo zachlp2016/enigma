@@ -5,8 +5,8 @@ module Offsets
     master_offset = master_offset.to_s[-4..-1].split.join
   end
 
-  def todays_date
+  def date_generator
     Date.today
+    two_digit_date
   end
-
 end
