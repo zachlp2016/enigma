@@ -63,10 +63,10 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_enigma_can_create_shifts
-    assert_equal 3, @enigma.a_shift
-    assert_equal 27, @enigma.b_shift
-    assert_equal 73, @enigma.c_shift
-    assert_equal 20, @enigma.d_shift
+    assert_equal 3, @enigma.a_shift("02715", "040895")
+    # assert_equal 27, @enigma.b_shift("02715", "040895")
+    # assert_equal 73, @enigma.c_shift("02715", "040895")
+    # assert_equal 20, @enigma.d_shift("02715", "040895")
   end
 
 
