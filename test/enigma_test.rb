@@ -100,7 +100,7 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_method_split_string_can_divide_message
-    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], @enigma.split_string(message)
+    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], @enigma.split_string("Hello World")
   end
 
   def test_encrypt_method_can_encrypt
