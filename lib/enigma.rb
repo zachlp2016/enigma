@@ -29,33 +29,48 @@ class Enigma
   end
 
   def encrypt(message, key = @random_number, date = six_digit_date)
-    encrypt_hash = {}
     encrypted_message = ""
     create_shifts(key, date)
     split_string(message).map.with_index do |letter, index|
-      if index == 0 || index == 4 || index == 8
-        shifted_set_0 = @characters.rotate(@a_shift)
-        new_char_0 = shifted_set_0[@characters.index(letter)]
-        encrypted_message << new_char_0
-      elsif index == 1 || index == 5 || index == 9
-        shifted_set_1 = @characters.rotate(@b_shift)
-        new_char_1 = shifted_set_1[@characters.index(letter)]
-        encrypted_message << new_char_1
-      elsif index == 2 || index == 6 || index == 10
-        shifted_set_2 = @characters.rotate(@c_shift)
-        new_char_2 = shifted_set_2[@characters.index(letter)]
-        encrypted_message << new_char_2
-      else index == 3 || index == 7 || index == 11
-        shifted_set_3 = @characters.rotate(@d_shift)
-        new_char_3 = shifted_set_3[@characters.index(letter)]
-        encrypted_message << new_char_3
+      if index == 0 || index % 4 == 0
+        encrypted_message << shift_0(letter)
+      elsif index == 1 || index % 4 == 1
+        encrypted_message << shift_1(letter)
+      elsif index == 2 || index % 4 == 2
+        encrypted_message << shift_2(letter)
+      elsif index == 3 || index % 4 == 3
+        encrypted_message << shift_3(letter)
       end
     end
-    encrypt_hash = {
+    encrypted_info = {
       encryption: encrypted_message,
       key: key,
       date: date
     }
-    return encrypt_hash
+    return encrypted_info
   end
+
+  def decrypt(message, key = @random_number, date = six_digit_date)
+    decrypted_message = ""
+    create_shifts(key, date)
+    split_string(message).map.with_index do |letter, index|
+      if index == 0 || index % 4 == 0
+        decrypted_message << neg_shift_0(letter)
+      elsif index == 1 || index % 4 == 1
+        decrypted_message << neg_shift_1(letter)
+      elsif index == 2 || index % 4 == 2
+        decrypted_message << neg_shift_2(letter)
+      elsif index == 3 || index % 4 == 3
+        decrypted_message << neg_shift_3(letter)
+      end
+    end
+    decrypted_info = {
+      decryption: decrypted_message,
+      key: key,
+      date: date
+    }
+    return decrypted_info
+  end
+
+
 end
