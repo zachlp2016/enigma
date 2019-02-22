@@ -73,5 +73,15 @@ class EnigmaTest < Minitest::Test
     assert_equal 20, @enigma.d_shift
   end
 
-
+  # def test_enigma_can_create_shifts_without_included_key_and_date
+  #   @enigma.random_number_generator
+  #   @enigma.a_shifter
+  #   assert_equal 2, @enigma.a_shift
+  #   @enigma.b_shifter
+  #   assert_instance_of Integer, @enigma.b_shift
+  #   @enigma.c_shifter
+  #   assert_instance_of Integer, @enigma.c_shift
+  #   @enigma.d_shifter
+  #   assert_instance_of Integer, @enigma.d_shift
+  # end
 end
