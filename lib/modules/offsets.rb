@@ -1,6 +1,6 @@
 module Offsets
 
-  def master_offset(date)
+  def master_offset(date = six_digit_date)
     master_offset = date.to_i * date.to_i
     master_offset = master_offset.to_s[-4..-1].split.join
   end
@@ -25,19 +25,19 @@ module Offsets
     todays_date.year.to_s[-2..-1]
   end
 
-  def a_offset(date)
+  def a_offset(date = six_digit_date)
     master_offset(date)[0].to_i
   end
 
-  def b_offset(date)
+  def b_offset(date = six_digit_date)
     master_offset(date)[1].to_i
   end
 
-  def c_offset(date)
+  def c_offset(date = six_digit_date)
     master_offset(date)[2].to_i
   end
 
-  def d_offset(date)
+  def d_offset(date = six_digit_date)
     master_offset(date)[2].to_i
   end
 end
