@@ -3,9 +3,12 @@
     "coverage": {
       "/Users/techoverco-mac/turing/1module/projects/enigma/lib/enigma.rb": [
         1,
+        1,
+        1,
         null,
         1,
         null,
+        1,
         1,
         null,
         null
@@ -33,8 +36,19 @@
         1,
         null,
         null
+      ],
+      "/Users/techoverco-mac/turing/1module/projects/enigma/lib/modules/offsets.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1550795784
+    "timestamp": 1550796712
   }
 }
