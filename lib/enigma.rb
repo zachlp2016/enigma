@@ -71,6 +71,4 @@ class Enigma
     }
     return decrypted_info
   end
-
-
 end

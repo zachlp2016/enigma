@@ -130,7 +130,6 @@ class EnigmaTest < Minitest::Test
     key: "02715",
     date: "040895"
   }
-
     assert_equal hash, @enigma.decrypt("keder ohulw", "02715", "040895")
   end
 
@@ -143,6 +142,10 @@ class EnigmaTest < Minitest::Test
     assert_equal "e", @enigma.neg_shift_1("e")
     assert_equal "l", @enigma.neg_shift_2("d")
     assert_equal "l", @enigma.neg_shift_3("e")
+  end
+
+  def test_encrypt_method_works_with_todays_date
+    assert_instance_of Hash, @enigma.encrypt("Hello World", "02715")
   end
 
 end
