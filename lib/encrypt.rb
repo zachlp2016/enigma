@@ -1,5 +1,4 @@
 require './lib/enigma.rb'
-require 'pry'
 
 enigma = Enigma.new
 message = File.open(ARGV[0])
