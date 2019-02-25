@@ -2,14 +2,12 @@ require './lib/enigma.rb'
 require 'pry'
 
 enigma = Enigma.new
-message = File.read('message.txt')
-encryption = enigma.encrypt(message.chop)
-new_file = File.write('encrypted.txt', encryption[:encryption])
+message = File.open(ARGV[0])
+encryption = enigma.encrypt(message.read.chop)
+new_file = File.open(ARGV[1], "w")
+new_file.write(encryption[:encryption])
 
-ARGV_1 = message
-ARGV_2 = new_file
-
-print "Created  with the key #{enigma.random_number} and date #{enigma.todays_date}\n"
+print "Created '#{ARGV[1]}' with the key #{enigma.random_number} and date #{enigma.todays_date}\n"
 
 
 
