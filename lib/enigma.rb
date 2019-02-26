@@ -2,6 +2,7 @@ require 'Date'
 require './lib/modules/keys'
 require './lib/modules/offsets'
 require './lib/modules/shifts'
+require 'pry'
 
 class Enigma
 
@@ -32,14 +33,18 @@ class Enigma
     encrypted_message = ""
     create_shifts(key, date)
     split_string(message).map.with_index do |letter, index|
-      if index == 0 || index % 4 == 0
-        encrypted_message << shift_0(letter)
-      elsif index == 1 || index % 4 == 1
-        encrypted_message << shift_1(letter)
-      elsif index == 2 || index % 4 == 2
-        encrypted_message << shift_2(letter)
-      elsif index == 3 || index % 4 == 3
-        encrypted_message << shift_3(letter)
+      if @characters.include?(letter)
+        if index == 0 || index % 4 == 0
+          encrypted_message << shift_0(letter)
+        elsif index == 1 || index % 4 == 1
+          encrypted_message << shift_1(letter)
+        elsif index == 2 || index % 4 == 2
+          encrypted_message << shift_2(letter)
+        elsif index == 3 || index % 4 == 3
+          encrypted_message << shift_3(letter)
+        end
+      else
+        encrypted_message << letter
       end
     end
     encrypted_info = {
@@ -54,14 +59,18 @@ class Enigma
     decrypted_message = ""
     create_shifts(key, date)
     split_string(message).map.with_index do |letter, index|
-      if index == 0 || index % 4 == 0
-        decrypted_message << neg_shift_0(letter)
-      elsif index == 1 || index % 4 == 1
-        decrypted_message << neg_shift_1(letter)
-      elsif index == 2 || index % 4 == 2
-        decrypted_message << neg_shift_2(letter)
-      elsif index == 3 || index % 4 == 3
-        decrypted_message << neg_shift_3(letter)
+      if @characters.include?(letter)
+        if index == 0 || index % 4 == 0
+          decrypted_message << neg_shift_0(letter)
+        elsif index == 1 || index % 4 == 1
+          decrypted_message << neg_shift_1(letter)
+        elsif index == 2 || index % 4 == 2
+          decrypted_message << neg_shift_2(letter)
+        elsif index == 3 || index % 4 == 3
+          decrypted_message << neg_shift_3(letter)
+        else
+          decrypted_message << letter
+        end
       end
     end
     decrypted_info = {
