@@ -144,4 +144,23 @@ class EnigmaTest < Minitest::Test
   def test_encrypt_method_works_without_a_key_or_a_date
     assert_instance_of Hash, @enigma.encrypt("hello world")
   end
+
+  def test_encrypt_method_works_with_non_standard_characters
+    hash = {
+    encryption: "keder!sprrdx!",
+    key: "02715",
+    date: "040895"
+            }
+    assert_equal hash, @enigma.encrypt("Hello! World!", "02715", "040895")
+  end
+
+  def test_decrypt_method_works_with_non_standard_characters
+    hash = {
+    decryption: "hello world",
+    key: "02715",
+    date: "040895"
+            }
+    assert_equal hash, @enigma.decrypt("keder!sprrdx!", "02715", "040895")
+
+  end
 end
