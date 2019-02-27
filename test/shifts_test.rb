@@ -15,6 +15,14 @@ class ShiftsTest < Minitest::Test
     assert_instance_of Shifts, @shifts
   end
 
+  def test_shifts_class_has_characters
+    expected_arr = ["a", "b", "c", "d", "e", "f", "g",
+      "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+      "r", "s", "t", "u", "v", "w", "x", "y", "z", " "
+    ]
+    assert_equal expected_arr, @shifts.characters
+  end
+
   def test_shifts_can_create_an_a_key
     assert_equal 2, @shifts.a_key.to_s.chars.count
     assert_equal 2, @shifts.b_key.to_s.chars.count
