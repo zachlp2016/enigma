@@ -1,6 +1,32 @@
-module Shifts
+require 'Date'
+require './lib/modules/keys'
+require './lib/modules/offsets'
+require 'pry'
 
-  def create_shifts(key = @random_number, date = six_digit_date)
+class Shifts
+
+  include Keys
+  include Offsets
+
+  attr_reader :random_number,
+              :a_shift,
+              :b_shift,
+              :c_shift,
+              :d_shift
+
+  def initialize
+    @random_number = random_number_generator
+    @a_shift = 0
+    @b_shift = 0
+    @c_shift = 0
+    @d_shift = 0
+  end
+
+  def split_string(message)
+    message.downcase.split("")
+  end
+
+  def create_shifts(key = @random_number, date = enigma.six_digit_date)
     a_shifter(key, date)
     b_shifter(key, date)
     c_shifter(key, date)
