@@ -1,10 +1,12 @@
+require './lib/shifts'
+
 class DecryptHelper
 
   def initialize
     @shifts = Shifts.new
   end
 
-  def decryption(message, key = random_number, date = six_digit_date)
+  def decryption(message, key = @shifts.random_number, date = @shifts.six_digit_date)
     decrypted_message = ""
     @shifts.create_shifts(key, date)
     @shifts.split_string(message).map.with_index do |letter, index|
