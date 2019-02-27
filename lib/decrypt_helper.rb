@@ -2,22 +2,21 @@ class DecryptHelper
 
   def initialize
     @shifts = Shifts.new
-    @characters = ("a".."z").to_a << " "
   end
-  
+
   def decryption(message, key = random_number, date = six_digit_date)
     decrypted_message = ""
     @shifts.create_shifts(key, date)
     @shifts.split_string(message).map.with_index do |letter, index|
-      if @characters.include?(letter)
+      if @shifts.characters.include?(letter)
         if index == 0 || index % 4 == 0
-          decrypted_message << neg_shift_0(letter)
+          decrypted_message << @shifts.neg_shift_0(letter)
         elsif index == 1 || index % 4 == 1
-          decrypted_message << neg_shift_1(letter)
+          decrypted_message << @shifts.neg_shift_1(letter)
         elsif index == 2 || index % 4 == 2
-          decrypted_message << neg_shift_2(letter)
+          decrypted_message << @shifts.neg_shift_2(letter)
         elsif index == 3 || index % 4 == 3
-          decrypted_message << neg_shift_3(letter)
+          decrypted_message << @shifts.neg_shift_3(letter)
         else
           decrypted_message << letter
         end

@@ -8,14 +8,13 @@ class EncryptHelper
 
   def initialize
     @shifts = Shifts.new
-    @characters = ("a".."z").to_a << " "
   end
 
   def encryption(message, key = random_number, date = six_digit_date)
     encrypted_message = ""
-    create_shifts(key, date)
+    @shifts.create_shifts(key, date)
     @shifts.split_string(message).map.with_index do |letter, index|
-      if @characters.include?(letter)
+      if @shifts.characters.include?(letter)
         if index == 0 || index % 4 == 0
           encrypted_message << @shifts.shift_0(letter)
         elsif index == 1 || index % 4 == 1

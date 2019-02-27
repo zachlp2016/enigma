@@ -15,4 +15,24 @@ class EnigmaTest < Minitest::Test
     assert_instance_of EncryptHelper, @encrypt_helper
   end
 
+  def test_encrypt_helper_method_can_return_encrypt_message
+    hash = {
+    encryption: "keder ohulw",
+    key: "02715",
+    date: "040895"
+            }
+
+    assert_equal hash, @encrypt_helper.encryption("Hello World", "02715", "040895")
+  end
+
+  def test_encryption_method_works_with_non_standard_characters
+    hash = {
+    encryption: "keder!sprrdx!",
+    key: "02715",
+    date: "040895"
+            }
+    assert_equal hash, @encrypt_helper.encryption("Hello! World!", "02715", "040895")
+  end
+
+
 end

@@ -12,7 +12,8 @@ class Shifts
               :a_shift,
               :b_shift,
               :c_shift,
-              :d_shift
+              :d_shift,
+              :characters
 
   def initialize
     @random_number = random_number_generator
@@ -20,6 +21,7 @@ class Shifts
     @b_shift = 0
     @c_shift = 0
     @d_shift = 0
+    @characters = ("a".."z").to_a << " "
   end
 
   def split_string(message)
